@@ -28,6 +28,11 @@ public class UserService {
         return repo.insert(obj);
     }
 
+    public void delete(String id) {
+        findById(id);
+        repo.deleteById(id);
+    }
+
     // UserService handles DTO conversion to allow future database access/logic
     public User fromDTO(UserDTO objDto) {
         return new User(objDto.getId(), objDto.getName(), objDto.getEmail());
